@@ -1,8 +1,6 @@
 ---
 import sendGrid from '@sendgrid/mail';
-import { resize } from 'motion';
 sendGrid.setApiKey(import.meta.env.SENDGRID_API_KEY);
-
 
 if(Astro.request.method === 'POST'){
     try {
@@ -13,18 +11,14 @@ if(Astro.request.method === 'POST'){
         const message= data.get('message');
 
         const msg= {
-            to: 'hectormartindama@gmail.com',
-            from: 'hectormartindama@gmail.com',
+            to: {email},
+            from: import.meta.env.EMAIL_VERIFICATE,
             replyTo: {email: email, name: name},
             subject: `Contact form submisson from ${name}`,
             text: message
         }
 
-        console.log(data)
-
-      
-
-        await sendGrid.send(msg).then(() =>{
+        sendGrid.send(msg).then(() =>{
             console.log('email sent');
         }).catch((error) =>{
             console.log(error);
