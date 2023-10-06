@@ -7,14 +7,31 @@ Inside of your Astro project, you'll see the following folders and files:
 /
 ├── public/
 │   └── favicon.svg
+│   │── icons/
+│   │── prorjectsImage/
+
 ├── src/
 │   ├── components/
 │   │   └── Card.astro
+│   │   └── ContactForm.astro
+│   │   └── Footer.astro
+│   │   └── Navbar.astro
+│   │   └── ProjectCard.astro
+│   │   └── SectionHeading.astro
+│   │   └── ThemeIcon.astro
+
 │   ├── layouts/
 │   │   └── Layout.astro
+│   ├── lib/
+│   │   └── data.js
 │   └── pages/
 │       └── index.astro
+│       └── contact.astro
+│       └── projects.astro
 └── package.json
+└── tailwind.config.cjs
+└── .env
+
 ```
 
 ## 🧞 Commands
