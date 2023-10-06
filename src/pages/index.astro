@@ -1,0 +1,120 @@
+---
+import SectionHeading from "../components/SectionHeading.astro";
+import Layout from "../layouts/Layout.astro";
+import { skillsData } from "../lib/data";
+---
+
+<script>
+  import { inView, animate, stagger } from "motion";
+
+  inView(".title", () => {
+    animate(".title",
+      { opacity: 1, transform: "none" },
+      { delay: 0.2, duration: 0.9, easing: [0.17, 0.55, 0.55, 1] }
+    );
+  });
+
+  inView("#skills", () => {
+    animate("#skill",
+      { opacity: [0, 1], y: [100, 0] },
+      { delay: stagger(0.05) }
+    );
+  });
+</script>
+
+<Layout title="About me">
+  <main class="mt-[88px] mb-[88px] grid place-items-center">
+    <section class="px-[30px] md:px-[83px] h-[calc(100vh-65px)] md:h-screen flex flex-col justify-around items-center">
+
+		<h1 class="title">
+        	Hello, I'm Hector. <br> I'm a full-stack developer. <br> I enjoy building sites & apps.
+      	</h1>
+
+		<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-arrow-down-filled" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+			<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+			<path d="M17 3.34a10 10 0 1 1 -14.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 14.995 -8.336zm-5 3.66a1 1 0 0 0 -1 1v5.585l-2.293 -2.292l-.094 -.083a1 1 0 0 0 -1.32 1.497l4 4c.028 .028 .057 .054 .094 .083l.092 .064l.098 .052l.081 .034l.113 .034l.112 .02l.117 .006l.115 -.007l.114 -.02l.142 -.044l.113 -.054l.111 -.071a.939 .939 0 0 0 .112 -.097l4 -4l.083 -.094a1 1 0 0 0 -1.497 -1.32l-2.293 2.291v-5.584l-.007 -.117a1 1 0 0 0 -.993 -.883z" stroke-width="0" fill="currentColor"></path>
+		</svg>
+    </section>
+
+    <section id="skills" class="px-[30px] md:px-[83px] max-w-[53rem] h-[calc(100vh-65px)] md:h-screen flex flex-col justify-center text-center sm:mb-40">
+      <SectionHeading title="My Skills" />
+      <ul class="flex flex-wrap justify-center gap-2 text-lg">
+        { skillsData.map((skill) => (
+            <li id="skill" class="bg-[transparent] pb-[10px] border border-[#0a0b0c] dark:border-[white] rounded-[1rem] text-[14px] py-[0.75rem] px-[1.25rem]">
+              {skill}
+            </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="px-[30px] md:px-[83px] max-w-[53rem] h-[calc(100vh-65px)] md:h-screen flex flex-col justify-center snap-center">
+      <SectionHeading title="Experience" />
+      <ol class="relative border-l border-gray-200 dark:border-gray-700">
+        <li class="mb-10 ml-4">
+          <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700">
+          </div>
+          <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">October 2022 / January 2023</time>
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Developer Junior Salesforce</h3>
+          <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+            During my internship I worked as a Junior Salesforce Developer
+            following the Scrum methodology, using the project management tool
+            Jira and Slack as a communication tool. My main functions consisted
+            in the development of Salesforce Organizations and Salesforce Maps
+            based on technical requirements set by the company, testing of
+            components to ensure product quality, uploading the Organization to
+            Bitbucket and participation in training sessions of the product with
+            customers.
+          </p>
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M1 5h12m0 0L9 1m4 4L9 9"></path>
+        </li>
+      </ol>
+    </section>
+  </main>
+</Layout>
+
+<style lang="scss">
+  span {
+    height: 40px;
+    width: 10px;
+    border-radius: 5px;
+    background-color: red;
+    margin: 6px;
+    animation: move 1.1s infinite ease-in-out;
+
+    &:first-child {
+      transform: rotate(-45deg);
+    }
+
+    &:last-child {
+      transform: rotate(45deg);
+    }
+
+    @keyframes move {
+      0% {
+        margin-top: 0px;
+      }
+      50% {
+        margin-top: 100px;
+      }
+      100% {
+        margin-top: 0px;
+      }
+    }
+  }
+
+  .title {
+    transform: translateX(-200px);
+    opacity: 0;
+    color: var(--text-color);
+    text-transform: uppercase;
+    font-size: 60px;
+    @media (width <= 767px) {
+      font-size: 30px;
+    }
+  }
+</style>

@@ -1,0 +1,55 @@
+---
+import sendGrid from '@sendgrid/mail';
+import { resize } from 'motion';
+sendGrid.setApiKey(import.meta.env.SENDGRID_API_KEY);
+
+
+if(Astro.request.method === 'POST'){
+    try {
+        // getting posted data form contact form
+        const data = await Astro.request.formData();
+        const name= data.get('name');
+        const email= data.get('email');
+        const message= data.get('message');
+
+        const msg= {
+            to: 'hectormartindama@gmail.com',
+            from: 'hectormartindama@gmail.com',
+            replyTo: {email: email, name: name},
+            subject: `Contact form submisson from ${name}`,
+            text: message
+        }
+
+        console.log(data)
+
+      
+
+        await sendGrid.send(msg).then(() =>{
+            console.log('email sent');
+        }).catch((error) =>{
+            console.log(error);
+        });
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+---
+
+    <p class="text-gray-700 text-center">Please contact me directly at <a class="underline" href="mailto:info.hectormartindama@gmail.com">email</a> or throug this form.</p>
+
+
+    <form method="POST" class="mt-10 flex flex-col md:w-[30rem]">
+        <input class="h-14 rounded-lg my-3 p-4 outline-none font-light" type="text" name="name" id="name" required placeholder="Your name">
+        <input class="h-14 rounded-lg p-4 outline-none font-light" type="email" name="email" required placeholder="Your email">
+        <textarea class="h-52 my-3 rounded-lg p-4 outline-none font-light" name="message" id="message" cols="30" rows="10" placeholder="Your message"></textarea>
+        <button class="bg-[black] text-white dark:bg-white dark:text-black flex items-center justify-center gap-2 h-[3rem] w-[8rem] rounded-full outline-none align-center transition-all" type="submit">
+            Submit
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-send" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M10 14l11 -11" />
+                <path d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5" />
+            </svg>
+        </button>
+    </form>
+

@@ -1,0 +1,190 @@
+---
+    const currentPath= Astro.url.pathname;
+---
+
+<script>
+    let posPrev= window.scrollY;
+    const btnMenu= document.querySelector('#menu-icon');
+    const navList= document.querySelector('.nav-menu');
+    const nav= document.querySelector('nav');
+
+    // open the navbar when the user click the menu icon
+    btnMenu.addEventListener('click', () => {
+        navList.classList.toggle('open'); 
+    });
+    
+    // close the navbar when the user click out of the navbar
+    document.addEventListener('click', (e) =>{
+        if(navList.classList.contains('open') && !nav.contains(e.target)){
+            navList.classList.remove('open');
+        }
+    });
+    
+
+    // hidden the navbar when the user scroll in the page
+    window.addEventListener('scroll', () =>{
+        let posCurrent= window.scrollY; 
+        if(posPrev > posCurrent) document.querySelector('nav').style.top= '0px';
+        else document.querySelector('nav').style.top= '-65px';
+        posPrev= posCurrent;
+    });
+</script>
+
+<header>
+    <nav>
+        <div class="logo">
+            <a href="/" class="font-semibold text-[30px]">Porfolio</a>
+        </div>
+
+       
+        <div class="nav-menu">
+            <a href="/projects" class={ currentPath === '/projects' ? 'btn active' : 'btn' }>Projects</a>
+            <a href="/" class={ currentPath === '/' ? 'active btn' : 'btn' }>About Me</a>
+            <a href="/contact"  class={ currentPath === '/contact' ? 'active btn' : 'btn' }>Contact</a>
+        </div>
+
+        <div class="icons">
+            <button class="prueba" id="menu-icon">
+               <div></div>
+               <div></div>
+               <div></div>
+            </button>
+        </div>
+    </nav>
+</header>
+
+
+
+
+<style lang="scss">
+
+
+
+    .icons{
+        display: none;
+        @media(width <= 767px) {
+            display: block;
+        }   
+    }
+
+    .btn{
+        text-decoration: none;
+        border: 1px solid var(--btn-border-color);
+        color: var(--btn-color);
+        background-color: transparent;
+        border-radius: 1rem;
+        padding: 10px 15px;
+        font-size: 16px;
+        font-weight: 300;
+        letter-spacing: -.25px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        &:hover{
+            background-color: var(--black);
+            color: var(--white);
+        }
+
+    }
+
+
+
+    .prueba{
+        display: flex;
+        flex-direction: column;
+        width: 30px;
+        height: 30px;
+        border: 0;
+        background-color: transparent;
+        gap: .45rem;
+
+        div{
+            background-color: var(--black);
+            height: 3px;
+            width: 100%;
+            border-radius: 5px;
+            transition: all .5s;
+            transform-origin: left;
+        }
+
+        &:focus{
+            div{ 
+                background-color: white;
+            }
+            div:first-child{
+                transform: rotate(45deg);
+            }
+            div:nth-child(2){
+                opacity: 0;
+            }
+            div:last-child{
+                transform: rotate(-45deg);
+            }
+        }
+    }
+   
+
+  
+
+
+    .active{
+        background-color: var(--btn-background-color-activate);
+        color: var(--btn-color-activate);
+    }
+
+    header{
+        display: flex;
+        justify-content: center;
+        align-items: center;;
+    }
+
+    nav{
+        position: fixed;
+        top: 0;
+        height: 65px;
+        width: 100%;
+        z-index: 1;
+        padding: 30px;
+
+        background-color: var(--background-color);
+        
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        transition: top 0.5s;
+    }
+
+    .nav-menu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        left: 0;
+        @media(width <= 776px) {
+            background-color: #0A0B0D;
+            position: absolute;
+            width: 100vw;
+            height: 500px;
+            top: -800px;
+            transition: all 0.4s ease;
+            flex-direction: column; 
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            
+            .btn{
+                border-color: white;
+                color: white;
+            }
+
+            .active{
+                color: black;
+                background-color: white;
+            }
+
+            &.open{
+                top: 0%;
+            }
+        }
+    }
+</style>
