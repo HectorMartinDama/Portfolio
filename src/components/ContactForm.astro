@@ -1,33 +1,18 @@
 ---
-import sendGrid from '@sendgrid/mail';
-sendGrid.setApiKey(import.meta.env.SENDGRID_API_KEY);
+const CLOUDFLARE_WORKER=import.meta.env.CLOUDFLARE_WORKER;
 
 if(Astro.request.method === 'POST'){
-    try {
-        // getting posted data form contact form
-        const data = await Astro.request.formData();
-        const name= data.get('name');
-        const email= data.get('email');
-        const message= data.get('message');
+    const data = await Astro.request.formData();
+    const name= data.get('name');
+    const email= data.get('email');
+    const message= data.get('message');
 
-        const msg= {
-            to: {email},
-            from: import.meta.env.EMAIL_VERIFICATE,
-            replyTo: {email: email, name: name},
-            subject: `Contact form submisson from ${name}`,
-            text: message
-        }
-
-        sendGrid.send(msg).then(() =>{
-            console.log('email sent');
-        }).catch((error) =>{
-            console.log(error);
-        });
-    } catch (error) {
-        console.log(error)
-    }
+    const response= await fetch(CLOUDFLARE_WORKER, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify({ 'subject' : message })
+    });
 }
-
 ---
 
     <p class="text-gray-700 text-center">Please contact me directly at <a class="underline" href="mailto:info.hectormartindama@gmail.com">email</a> or throug this form.</p>
