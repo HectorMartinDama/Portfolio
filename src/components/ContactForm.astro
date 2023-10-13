@@ -1,5 +1,6 @@
 ---
 const CLOUDFLARE_WORKER=import.meta.env.CLOUDFLARE_WORKER;
+let responseForm;
 
 if(Astro.request.method === 'POST'){
     const data = await Astro.request.formData();
@@ -10,8 +11,10 @@ if(Astro.request.method === 'POST'){
     const response= await fetch(CLOUDFLARE_WORKER, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json'},
-        body: JSON.stringify({ 'subject' : message })
+        body: JSON.stringify({ 'subject' : message, 'email' : email, 'name': name })
     });
+
+    responseForm= response;
 }
 ---
 
@@ -21,7 +24,7 @@ if(Astro.request.method === 'POST'){
     <form method="POST" class="mt-10 flex flex-col md:w-[30rem]">
         <input class="h-14 rounded-lg my-3 p-4 outline-none font-light" type="text" name="name" id="name" required placeholder="Your name">
         <input class="h-14 rounded-lg p-4 outline-none font-light" type="email" name="email" required placeholder="Your email">
-        <textarea class="h-52 my-3 rounded-lg p-4 outline-none font-light" name="message" id="message" cols="30" rows="10" placeholder="Your message"></textarea>
+        <textarea class="h-52 my-3 rounded-lg p-4 outline-none font-light" name="message" id="message" required cols="30" rows="10" placeholder="Your message"></textarea>
         <button class="bg-[black] text-white dark:bg-white dark:text-black flex items-center justify-center gap-2 h-[3rem] w-[8rem] rounded-full outline-none align-center transition-all" type="submit">
             Submit
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-send" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -30,5 +33,6 @@ if(Astro.request.method === 'POST'){
                 <path d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5" />
             </svg>
         </button>
+        {responseForm === true ? (<p>Formulario enviado con exito</p>) : (<p>Ha ocurrido un error</p>)}
     </form>
 
