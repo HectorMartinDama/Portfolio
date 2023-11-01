@@ -49,22 +49,29 @@ All commands are run from the root of the project, from a terminal:
 ## 🛠️ Build with
 
 
-![](https://img.shields.io/badge/Astro-purple?style=for-the-badge&logo=Astro&logoColor=white)
+![](https://img.shields.io/badge/Astro-purple?style=for-the-badge&logo=Astro&logoColor=white) ![](https://img.shields.io/badge/MotionOne-black?style=for-the-badge&logo=framer&logoColor=white) ![](https://img.shields.io/badge/Tailwindcss-38BDF8?style=for-the-badge&logo=Tailwindcss&logoColor=white) ![](https://img.shields.io/badge/Workers-F6821F?style=for-the-badge&logo=Cloudflare&logoColor=white) 
+![](https://img.shields.io/badge/Resend-black?style=for-the-badge&logo=email&logoColor=white) ![](https://img.shields.io/badge/Vercel-black?style=for-the-badge&logo=vercel&logoColor=white) 
+
+ 
 
 
-![](https://img.shields.io/badge/MotionOne-black?style=for-the-badge&logo=framer&logoColor=white)
 
-![](https://img.shields.io/badge/Tailwindcss-38BDF8?style=for-the-badge&logo=Tailwindcss&logoColor=white)
+
+
+
+
 
 
 
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file
+ 
+`CLOUDFLARE_WORKER` 
 
-`SENDGRID_API_KEY` 
+### Environment Variables in Cloudflare Workers
 
-`EMAIL_VERIFICATE`
+`RESEND_API_KEY` 
 
 
 ## Roadmap
@@ -72,9 +79,15 @@ To run this project, you will need to add the following environment variables to
 
 | Component                   | Resource                                           |
 | :------------------------ | :----------------------------------------------- |
-| `dark mode in astro`             | [article](https://docs.astro.build/en/tutorial/6-islands/2)                         |
+| `dark mode component in astro`             | [web](https://docs.astro.build/en/tutorial/6-islands/2)                         |
 | `dark mode animation`             | [video](https://www.youtube.com/watch?v=kZiS1QStIWc) [web](https://web.dev/building-a-theme-switch-component/)     |
 | `animations with motion one`           | [video](https://www.youtube.com/watch?v=STq7LFohs3A) [web](https://motion.dev/examples)
+| `send email with resend and cloudflare workers`           | [web](https://resend.com/docs/send-with-cloudflare-workers)
+| `cloudflare workers`           | [web](https://workers.cloudflare.com)
+
+
+
+
 
 
 ## Feedback
