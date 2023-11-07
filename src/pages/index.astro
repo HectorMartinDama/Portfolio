@@ -1,11 +1,14 @@
 ---
+import CertificationCard from "../components/CertificationCard.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import Layout from "../layouts/Layout.astro";
-import { skillsData } from "../lib/data";
+import { skillsData, certificationsData } from "../lib/data";
 ---
 
 <script>
   import { inView, animate, stagger } from "motion";
+
+ 
 
   inView(".title", () => {
     animate(".title",
@@ -20,11 +23,15 @@ import { skillsData } from "../lib/data";
       { delay: stagger(0.05) }
     );
   });
+
+  inView("#certifcations", () =>{
+    animate("#certificationCard", { opacity: [0, 1], y: [100, 0] }, { duration: 1, delay: stagger(0.5) })
+  })
 </script>
 
 <Layout title="About me">
-  <main class="mt-[88px] mb-[88px] grid place-items-center">
-    <section class="px-[30px] md:px-[83px] h-[calc(100vh-65px)] md:h-screen flex flex-col justify-around items-center">
+  <main class="mt-[88px] mb-[88px] grid place-items-center overflow-auto snap-y snap-mandatory">
+    <section class="snap-end px-[30px] md:px-[83px] min-h-[calc(100vh-65px)]  h-[calc(100vh-65px)] md:h-screen flex flex-col justify-around items-center">
 
 		<h1 class="title">
         	Hello, I'm Hector. <br> I'm a full-stack developer. <br> I enjoy building sites & apps.
@@ -36,7 +43,7 @@ import { skillsData } from "../lib/data";
 		</svg>
     </section>
 
-    <section id="skills" class="px-[30px] md:px-[83px] max-w-[53rem] h-[calc(100vh-65px)] md:h-screen flex flex-col justify-center text-center sm:mb-40">
+    <section id="skills" class="snap-end px-[30px] md:px-[83px] max-w-[53rem] min-h-[calc(100vh-65px)] h-[calc(100vh-65px)] md:h-screen flex flex-col justify-center text-center sm:mb-40">
       <SectionHeading title="My Skills" />
       <ul class="flex flex-wrap justify-center gap-2 text-lg">
         { skillsData.map((skill) => (
@@ -47,8 +54,22 @@ import { skillsData } from "../lib/data";
       </ul>
     </section>
 
-    <section class="px-[30px] md:px-[83px] max-w-[53rem] h-[calc(100vh-65px)] md:h-screen flex flex-col justify-center snap-center">
-      <SectionHeading title="Experience" />
+
+    <section id="certifcations" class="snap-end px-[30px] md:px-[83px] max-w-[53rem] min-h-[calc(100vh-65px)] h-[calc(100vh-65px)] gap-[30px] md:h-screen flex flex-col justify-center">
+     <SectionHeading title="Certifications"/>
+     <ul id="certificationContainer">
+        { certificationsData.map((certification) => (
+          <li id="certificationCard" class="mb-[30px] last:mb-0">
+            <CertificationCard name={certification.name} img={certification.img} url={certification.url}/>
+          </li>
+        ))}
+     
+     </ul>
+    
+    </section>
+
+    <section class="snap-end px-[30px] md:px-[83px] max-w-[53rem] min-h-[calc(100vh-65px)] h-[calc(100vh-65px)] md:h-screen flex flex-col justify-center">
+      <SectionHeading title="Experience"/>
       <ol class="relative border-l border-gray-200 dark:border-gray-700">
         <li class="mb-10 ml-4">
           <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700">
@@ -74,10 +95,17 @@ import { skillsData } from "../lib/data";
         </li>
       </ol>
     </section>
+
   </main>
 </Layout>
 
 <style lang="scss">
+
+
+  html{
+    scroll-behavior: smooth;
+    
+  }
   span {
     height: 40px;
     width: 10px;

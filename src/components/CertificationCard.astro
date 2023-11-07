@@ -1,0 +1,31 @@
+---
+interface Props {
+    name: string;
+    img: string;
+    url: string;
+}
+
+const { name, img, url } = Astro.props;
+---
+
+
+
+
+<div class="h-[80px] md:w-[600px] w-[300px] bg-transparent border border-black dark:border-white  rounded-[16px] flex items-center justify-between px-[30px]">
+    <img class="h-[50px] w-[50px] hidden md:block" src={img} alt=`image of course ${name}`>
+    <p class="text-black dark:text-white font-medium text-[14px]">{name}</p>
+    <a target="_blank" href={url}>
+        <div class="group">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-external-link stroke-gray-600 dark:stroke-gray-400 transition-colors duration-200 group-hover:stroke-gray-500 dark:group-hover:stroke-gray-300"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
+                <path d="M11 13l9 -9"></path>
+                <path d="M15 4h5v5"></path>
+             </svg>
+        </div>
+    </a>
+</div>
+
+
+
+
