@@ -35,7 +35,12 @@ export const certificationsData= [
     {
         name: 'Curso de Testing en Frontend',
         img: 'icons/codely.jpeg',
-        url: 'https://pro.codely.com/library/testing-en-frontend-65916/196940/about/'
+        url: 'https://drive.google.com/file/d/13VY_-tWLlpeCifIw2qnEjEY4cYb0klQk/view?usp=sharing'
+    },
+    {
+        name: 'Principios SOLID Aplicados',
+        img: 'icons/codely.jpeg',
+        url: 'https://drive.google.com/file/d/18B87DopOsBVqY8XZU7zk8DfLkMSd9UPL/view?usp=sharing'
     },
     {
         name: 'ITIL 4 Foundation (in progress...)',
