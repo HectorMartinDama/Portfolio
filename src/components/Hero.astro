@@ -1,0 +1,29 @@
+---
+const personalImgAlt = 'Héctor Martín Dama';
+import SocialPill from './SocialPill.astro';
+import LinkedIn from './icons/LinkedIn.astro';
+---
+
+<div class="max-w-xl">
+  <div class="flex gap-4 mb-4">
+    <img
+      class="rounded-full shadow-lg w-[4rem] h-[4rem] object-cover"
+      src="/HectorMartinDama.webp"
+      alt={personalImgAlt}
+    />
+  </div>
+  <h1 class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white">Hola, soy Héctor</h1>
+  <p
+    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-[#7EEBB0] [&>strong]:text-[#8685EF] [&>strong]:font-semibold dark:text-gray-300"
+  >
+    <strong>Desarollador FullStack Web de Software</strong> de Madrid, España. Especializado en el desarrollo de
+    aplicaciones web únicas y aplicar las mejores tecnicas. Si quieres saber más de mi puedes hechar un vistazo a mi
+    LinkedIn.
+  </p>
+  <nav class="flex flex-wrap gap-4 mt-8">
+    <SocialPill href="https://www.linkedin.com/in/h%C3%A9ctor-mart%C3%ADn-dama-a88a761a2">
+      <LinkedIn />
+       LinkedIn
+    </SocialPill>
+  </nav>
+</div>

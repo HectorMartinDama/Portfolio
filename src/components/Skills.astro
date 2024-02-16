@@ -1,0 +1,26 @@
+---
+import { SKILLS } from '../lib/data';
+---
+
+<script>
+  import { inView, animate, stagger } from 'motion';
+
+  inView('#skills', () => {
+    animate('#skill', { opacity: [0, 1], y: [100, 0] }, { delay: stagger(0.05) });
+  });
+</script>
+
+<div id="skills">
+  <ul class="flex flex-wrap justify-center gap-2 text-[15px]">
+    {
+      SKILLS.map(skill => (
+        <div
+          id="skill"
+          class="bg-[transparent] pb-[10px] border  text-gray-700 dark:text-white border-[#0a0b0c] dark:border-[white] rounded-[1rem] py-[0.75rem] px-[1.25rem]"
+        >
+          {skill}
+        </div>
+      ))
+    }
+  </ul>
+</div>

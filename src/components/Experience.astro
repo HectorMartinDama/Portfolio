@@ -1,0 +1,23 @@
+---
+import ExperienceItem from './ExperienceItem.astro';
+const EXPERIENCE = [
+  {
+    date: 'Octubre 2022 / Enero 2023',
+    title: 'Developer Junior Salesforce',
+    company: '3nitram',
+    description:
+      'Mi responsabilidad en este puesto fue el desarrollo de componentes personalizados en Salesforce con JavaScript, según los requisitos de los clientes. Realicé pruebas de los componentes utilizando Jest y trabajé con control de versiones (git). Participé en reuniones de formación con nuestros clientes para explicar el funcionamiento de la organización y los componentes, así como para recopilar requisitos o nuevas funcionalidades que quisieran añadir a la organización.',
+    link: 'https://www.linkedin.com/in/h%C3%A9ctor-mart%C3%ADn-dama-a88a761a2/details/experience/'
+  }
+];
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map(experience => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
