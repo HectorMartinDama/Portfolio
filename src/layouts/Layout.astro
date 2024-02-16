@@ -35,7 +35,7 @@ const { title, description } = Astro.props;
     <Navbar />
     <slot />
     <Footer />
-    <div class="btn-float">
+    <div class="fixed right-5 bottom-5">
       <ThemeIcon />
     </div>
     <style is:global lang="scss">
@@ -57,13 +57,6 @@ const { title, description } = Astro.props;
           scroll-behavior: auto;
         }
       }
-
-      .btn-float {
-        position: fixed;
-        right: 20px;
-        bottom: 20px;
-      }
-
       :root {
         --background-color: #e4e4e4;
         --btn-border-color: black;

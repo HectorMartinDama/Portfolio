@@ -17,76 +17,92 @@ import FrontendMentor from './icons/FrontendMentor.astro';
   };
 </script>
 
-<footer
-  id="contacto"
-  class="w-full mx-auto container lg:max-w-4xl md:max-w-2xl mt-20 pb-10 flex flex-col justify-center gap-[30px]"
->
-  <h1 class="text-[100px] font-bold flex justify-center text-[#8685EF] dark:text-[#7EEBB0]">Let's get in touch.</h1>
+<section>
+  <footer
+    id="contacto"
+    class="w-full mx-auto container lg:max-w-4xl md:max-w-2xl mt-20 pb-10 flex flex-col justify-center gap-[30px]"
+  >
+    <h1 class="text-[40px] md:text-[90px] font-bold flex justify-center text-[#8685EF] dark:text-[#7EEBB0]">
+      Let's get in touch.
+    </h1>
 
-  <div class="flex justify-center items-center">
-    <div class="realtive container grid border border-black">
-      <!-- First line  -->
-      <div class="grid">
-        <div class="grid place-content-center h-[130px] border border-black dark:border-white">
-          <div class="grid grid-cols-3 h-[130px] w-full">
-            <a
-              class="group relative grid place-content-center border border-black dark:border-white overflow-hidden"
-              href="https://www.linkedin.com/in/h%C3%A9ctor-mart%C3%ADn-dama-a88a761a2"
-              target="_blank"
-            >
-              <LinkedIn class="z-10 w-[35px] h-[35px]" />
-              <div
-                class="absolute grid w-[200%] h-[200%] -top-1/2 -left-1/2 scale-0 group-hover:scale-100 bg-[white] dark:bg-[#1F2937] rounded-full transition duration-700 ease-in-out"
-              >
-              </div>
-            </a>
-            <a
-              class="group relative grid place-content-center border border-black dark:border-white overflow-hidden"
-              href="https://github.com/HectorMartinDama"
-              target="_blank"
-            >
-              <GitHub class="z-10 w-[30px] h-[30px]" />
-              <div
-                class="absolute grid w-[200%] h-[200%] -top-1/2 -left-1/2 scale-0 group-hover:scale-100 bg-[white] dark:bg-[#1F2937] rounded-full transition duration-700 ease-in-out"
-              >
-              </div>
-            </a>
-            <a
-              class="group relative grid place-content-center border border-black dark:border-white overflow-hidden"
-              href="https://www.frontendmentor.io/profile/HectorMartinDama"
-              target="_blank"
-            >
-              <FrontendMentor class="z-10" />
-              <div
-                class="absolute grid w-[200%] h-[200%] -top-1/2 -left-1/2 scale-0 group-hover:scale-100 bg-[white] dark:bg-[#1F2937] rounded-full transition duration-700 ease-in-out"
-              >
-              </div>
-            </a>
-          </div>
-        </div>
+    <div class="md:hidden flex items-center justify-center gap-3">
+      <a href="https://github.com/HectorMartinDama">
+        <GitHub class="w-[27px] h-[27px]" />
+      </a>
+      <a href="https://www.linkedin.com/in/h%C3%A9ctor-mart%C3%ADn-dama-a88a761a2">
+        <LinkedIn class="w-[30px] h-[30px]" />
+      </a>
+      <a href="https://www.frontendmentor.io/profile/HectorMartinDama">
+        <FrontendMentor />
+      </a>
+    </div>
 
-        <!-- Second Line  -->
-        <div class="grid grid-cols-6">
-          <div class="grid place-content-center py-6 border border-black dark:border-white col-span-2">
-            <a href="mailto:info.hectormartindama@gmail.com">info.hectormartindama@gmail.com</a>
+    <div class="md:block hidden justify-center items-center">
+      <div class="realtive container grid border border-black">
+        <!-- First line  -->
+        <div class="grid">
+          <div class="grid place-content-center h-[130px] border border-black dark:border-white">
+            <div class="grid grid-cols-3 h-[130px] w-full">
+              <a
+                class="group relative grid place-content-center border border-black dark:border-white overflow-hidden"
+                href="https://www.linkedin.com/in/h%C3%A9ctor-mart%C3%ADn-dama-a88a761a2"
+                target="_blank"
+              >
+                <LinkedIn class="z-10 w-[35px] h-[35px]" />
+                <div
+                  class="absolute grid w-[200%] h-[200%] -top-1/2 -left-1/2 scale-0 group-hover:scale-100 bg-[white] dark:bg-[#1F2937] rounded-full transition duration-700 ease-in-out"
+                >
+                </div>
+              </a>
+              <a
+                class="group relative grid place-content-center border border-black dark:border-white overflow-hidden"
+                href="https://github.com/HectorMartinDama"
+                target="_blank"
+              >
+                <GitHub class="z-10 w-[30px] h-[30px]" />
+                <div
+                  class="absolute grid w-[200%] h-[200%] -top-1/2 -left-1/2 scale-0 group-hover:scale-100 bg-[white] dark:bg-[#1F2937] rounded-full transition duration-700 ease-in-out"
+                >
+                </div>
+              </a>
+              <a
+                class="group relative grid place-content-center border border-black dark:border-white overflow-hidden"
+                href="https://www.frontendmentor.io/profile/HectorMartinDama"
+                target="_blank"
+              >
+                <FrontendMentor class="z-10" />
+                <div
+                  class="absolute grid w-[200%] h-[200%] -top-1/2 -left-1/2 scale-0 group-hover:scale-100 bg-[white] dark:bg-[#1F2937] rounded-full transition duration-700 ease-in-out"
+                >
+                </div>
+              </a>
+            </div>
           </div>
-          <div class="grid place-content-center py-6 border border-black dark:border-white">
-            <p>@hectormartin</p>
-          </div>
-          <div class="grid place-content-center py-6 border border-black dark:border-white">
-            <p>Madrid, Spain</p>
-          </div>
-          <div
-            id="btnBackToTop"
-            class="grid place-content-center py-6 border cursor-pointer border-black dark:border-white col-span-2"
-          >
-            <p class="uppercase flex items-center gap-[10px]">
-              back to top
-              <UpArrow />
-            </p>
+
+          <!-- Second Line  -->
+          <div class="grid grid-cols-6">
+            <div class="grid place-content-center py-6 border border-black dark:border-white col-span-2">
+              <a href="mailto:info.hectormartindama@gmail.com">info.hectormartindama@gmail.com</a>
+            </div>
+            <div class="grid place-content-center py-6 border border-black dark:border-white">
+              <p>@hectormartin</p>
+            </div>
+            <div class="grid place-content-center py-6 border border-black dark:border-white">
+              <p>Madrid, Spain</p>
+            </div>
+            <div
+              id="btnBackToTop"
+              class="grid place-content-center py-6 border cursor-pointer border-black dark:border-white col-span-2"
+            >
+              <p class="uppercase flex items-center gap-[10px]">
+                back to top
+                <UpArrow />
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
+</section>

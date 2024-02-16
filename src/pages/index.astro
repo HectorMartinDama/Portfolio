@@ -8,6 +8,8 @@ import CodeIcon from '../components/icons/CodeIcon.astro';
 import Projects from '../components/Projects.astro';
 import SkillIcon from '../components/icons/SkillIcon.astro';
 import Skills from '../components/Skills.astro';
+import AboutMe from '../components/AboutMe.astro';
+import ProfileCheck from '../components/icons/ProfileCheck.astro';
 ---
 
 <Layout title="Portfolio de Héctor Martín Dama - Desarollador y programador web" description="">
@@ -15,33 +17,40 @@ import Skills from '../components/Skills.astro';
     <SectionContainer class="py-16 md:py-36">
       <Hero />
     </SectionContainer>
+    <div class="space-y-24">
+      <SectionContainer id="experiencia">
+        <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
+          <Briefcase class="h-[2rem] w-[2rem]" />
+           Experiencia laboral
+        </h2>
+        <Experience />
+      </SectionContainer>
+
+      <SectionContainer>
+        <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
+          <SkillIcon class="h-[2rem] w-[2rem]" />
+           Habilidades
+        </h2>
+        <Skills />
+      </SectionContainer>
+
+      <SectionContainer id="proyectos">
+        <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
+          <CodeIcon class="h-[2rem] w-[2rem]" />
+           Proyectos
+        </h2>
+        <Projects />
+      </SectionContainer>
+
+      <SectionContainer id="sobre-mi">
+        <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
+          <ProfileCheck class="h-[2rem] w-[2rem]" />
+           Sobre mí
+        </h2>
+        <AboutMe />
+      </SectionContainer>
+    </div>
   </main>
-
-  <div class="space-y-24">
-    <SectionContainer id="experiencia">
-      <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
-        <Briefcase class="h-[2rem] w-[2rem]" />
-         Experiencia laboral
-      </h2>
-      <Experience />
-    </SectionContainer>
-
-    <SectionContainer>
-      <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
-        <SkillIcon class="h-[2rem] w-[2rem]" />
-         Habilidades
-      </h2>
-      <Skills />
-    </SectionContainer>
-
-    <SectionContainer id="proyectos">
-      <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
-        <CodeIcon class="h-[2rem] w-[2rem]" />
-         Proyectos
-      </h2>
-      <Projects />
-    </SectionContainer>
-  </div>
 </Layout>
 
 <style lang="scss">
