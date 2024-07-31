@@ -1,0 +1,89 @@
+---
+import ViewTransitions from 'astro/components/ViewTransitions.astro';
+import Email from '../components/icons/Email.astro';
+import Github from '../components/icons/Github.astro';
+import Linkedin from '../components/icons/Linkedin.astro';
+import Nav from '../components/Nav.astro';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<ViewTransitions/>
+	</head>
+	<body class="absolute w-full">
+		<main class="relative w-full lg:h-screen p-0 sm:p-5">
+			<div class="w-full h-full rounded-2xl sm:border flex flex-wrap justify-between lg:divide-x">
+				<div class="w-full lg:w-2/5 p-2 md:p-8">
+					<h1 class="text-3xl text-[#0A0A0A] leading-10 font-semibold -tracking-wider">Héctor Martin Dama</h1>
+					<p class="my-6 max-w-2xl text-base text-[#0A0A0A]">Hey 👋 Héctor here! I am a full stack developer from Madrid, Spain. I build web applications and backend servers.</p>
+					<div class="flex flex-wrap items-center gap-2">
+						<button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium border h-9 px-4 py-2 transition-colors duration-150 hover:bg-black hover:text-white">
+							<a href="https://drive.google.com/file/d/1TUPzfGEDOHcAiejLhlLL4OGZsnO7Azdj/view?usp=sharing" target="_blank" class="font-semibold">Resume</a>
+						</button>
+						<a href="https://github.com/HectorMartinDama" target="_blank" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium border h-9 w-9">
+							<Github/>
+						</a>
+						<a href="www.linkedin.com/in/héctor-martín-dama-a88a761a2" target="_blank" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium border h-9 w-9">
+							<Linkedin/>
+						</a>
+						<a href="mailto:info.hectormartindama@gmail.com" target="_blank" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium border  h-9 w-9">
+							<Email/>
+						</a>
+					</div>
+					<div class="mt-16 space-y-2 rounded-lg border-l-4 py-2 pl-4 max-w-2xl text-muted-foreground">
+						<p class="text-secondary">
+							<span class="font-semibold text-primary/90">Frontend: </span>
+							Sveltekit, Angular, Astro, Testing Library, Jest / Vitest and Cypress
+						</p>
+						<p class="text-secondary">
+							<span class="font-semibold text-primary/90">Backend: </span>
+							NodeJS, Express, GraphQL, Microservices, RabbitMQ, DDD, Event-Drive Architecture  
+						</p>
+						<p class="text-secondary">
+							<span class="font-semibold text-primary/90">DevOps: </span>
+							Github Actions, CI, CD, Docker, AWS
+						</p>
+						<p class="text-secondary">
+							<span class="font-semibold text-primary/90">Databases: </span>
+							MongoDB, SQL, SQLite and Redis
+						</p>
+					</div>
+				</div>
+				<div class="relative w-full mt-6 max-w-4xl mx-auto lg:mt-0 lg:h-full lg:w-3/5 p-2 md:p-8 lg:overflow-y-scroll">
+					<Nav/>
+					<slot />
+				</div>
+			</div>
+		</main>
+		
+		
+	</body>
+</html>
+
+
+<style is:global>
+	@import url("https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap");
+
+
+	* {
+		font-family: "Onest";
+		font-optical-sizing: auto;
+		font-weight: 400;
+		font-style: normal;
+	}
+
+
+</style>

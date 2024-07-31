@@ -1,0 +1,39 @@
+---
+import { URL_BLOG } from '../lib/data';
+import type { Entry } from '../types/global';
+
+const formatIsoDate= (isoDate: string): string => {
+    const date = new Date(isoDate);
+    const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
+}
+
+const formatUrlBlogPost= (slug: string, collection: string): string =>{
+    return URL_BLOG + slug.split('/')[0] + '/' + collection + '/' + slug.split('/')[1];
+}
+
+interface Props{
+    entry: Entry;
+}
+
+const { entry }= Astro.props;
+---
+
+
+
+
+<a href={formatUrlBlogPost(entry.slug, entry.collection)} target="_blank">
+    <div class="w-full h-full max-w-lg rounded-xl overflow-hidden border hover:border-black duration-100 transition-all ease-in-out">
+        <img src={URL_BLOG + entry.data.image.src} alt={entry.data.image.alt} height="111" width="200" fetchpriority="high" class="w-full aspect-[8/5] object-contain">
+        <div class="p-3">
+            <h1 class="text-xl font-semibold">{entry.data.title}</h1>
+            <div class="flex items-center gap-2 flex-wrap mt-2">
+                <p class="px-2 py-1 rounded-lg bg-muted text-xs cursor-pointer bg-[#F5F5F5]">{entry.data.category}</p>
+            </div>
+            <p class="text-sm mt-2 text-[#737373]">{entry.data.description}</p>
+            <div class="w-full flex justify-end">
+                <p class="text-xs text-muted-foreground mt-2 px-2 py-1 rounded bg-[#F5F5F5]">{formatIsoDate(entry.data.date)}</p>
+            </div>
+        </div>
+    </div>
+</a>
