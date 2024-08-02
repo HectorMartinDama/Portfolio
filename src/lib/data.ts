@@ -21,12 +21,23 @@ export const PROJECTS: Project[] = [
       "Microservices",
       "GraphQL",
     ],
-    repository: "",
+    repository: "https://github.com/HectorMartinDama/Thullo",
     deploy: "http://thullo.app/",
     article: "https://blog-hectormartindama.vercel.app/en/blog/post-1",
     image: {
       src: "projectImages/thullo.webp",
-      alt: "",
+      alt: "Thullo - Manage your boards image",
+    },
+  },
+  {
+    title: "Challenges of FrontendMentor",
+    description: "Solutions to FrontendMentor challenges.",
+    date: "Agust 2, 2024",
+    technologies: ["Astro", "Tailwind"],
+    deploy: "https://frontendmentor-challenges-solved-page.vercel.app/",
+    image: {
+      src: "projectImages/frontendmentor.webp",
+      alt: "Challenges of FrontendMentor image",
     },
   },
 ];

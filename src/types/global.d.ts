@@ -3,9 +3,9 @@ export type Project = {
   description: string;
   date: string;
   technologies: string[];
-  repository: string;
+  repository?: string;
   deploy: string;
-  article: string;
+  article?: string;
   image: Image;
 };
 
