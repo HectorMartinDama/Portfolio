@@ -6,6 +6,26 @@ export const EXPERIENCE: Experience[] = [{}];
 
 export const PROJECTS: Project[] = [
   {
+    title: "AI Alt Text Generator",
+    description:
+      "AI Alt Text Generator is a web page that generates the alts of an image using artificial intelligence.",
+    date: "September 17, 2024",
+    technologies: [
+      "Google AI Gemini",
+      "Sveltekit",
+      "Vercel AI SDK",
+      "TailwindCSS",
+      "Shadcn",
+    ],
+    repository: "https://github.com/HectorMartinDama/AI-Alt-Text-Generator",
+    deploy:
+      "https://ai-alt-text-generator-hectormartindamas-projects.vercel.app/",
+    image: {
+      src: "projectImages/ai-alt-text-generator.webp",
+      alt: "AI Alt Text Generator",
+    },
+  },
+  {
     title: "Thullo - Manage your boards",
     description:
       "Thullo is an app for real-time board management, which allows you to organize projects and tasks collaboratively.",
