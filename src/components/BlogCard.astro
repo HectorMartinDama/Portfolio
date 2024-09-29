@@ -2,6 +2,7 @@
 import { URL_BLOG } from '../lib/data';
 import type { Entry } from '../types/global';
 
+
 const formatIsoDate= (isoDate: string): string => {
     const date = new Date(isoDate);
     const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };

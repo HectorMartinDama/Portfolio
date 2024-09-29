@@ -1,0 +1,23 @@
+---
+import type { Entry, ResponseData } from "../types/global";
+import BlogCard from "./BlogCard.astro";
+import { BLOG_API_ENDPOINT } from 'astro:env/server';
+
+const getAllPosts= async (): Promise<Entry[]> =>{
+    const response= await fetch(BLOG_API_ENDPOINT);
+    if(!response.ok) throw new Error(`Error fetching posts: ${response.statusText}`);
+    const data: ResponseData= await response.json();
+    return data.englishDocsEntries;
+}
+
+const englishDocsEntries = await getAllPosts();
+---
+
+<div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-8">
+    {
+        englishDocsEntries.map((entry) =>(
+            <BlogCard {entry}/>
+        ))
+    }
+
+</div>

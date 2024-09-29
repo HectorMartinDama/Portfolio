@@ -1,5 +1,5 @@
 ---
-import ViewTransitions from 'astro/components/ViewTransitions.astro';
+import { ClientRouter } from 'astro:transitions';
 import Email from '../components/icons/Email.astro';
 import Github from '../components/icons/Github.astro';
 import Linkedin from '../components/icons/Linkedin.astro';
@@ -21,7 +21,7 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		<ViewTransitions/>
+		<ClientRouter/>
 	</head>
 	<body class="absolute w-full">
 		<main class="relative w-full lg:h-screen p-0 sm:p-5">
