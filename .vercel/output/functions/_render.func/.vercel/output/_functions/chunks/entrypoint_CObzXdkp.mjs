@@ -1,11 +1,11 @@
-import { R as ROUTE_TYPE_HEADER, p as REROUTE_DIRECTIVE_HEADER, A as AstroError, q as i18nNoLocaleFoundInPath, t as ResponseSentError, u as MiddlewareNoDataOrNextCalled, v as MiddlewareNotAResponse, G as GetStaticPathsRequired, w as InvalidGetStaticPathsReturn, x as InvalidGetStaticPathsEntry, y as GetStaticPathsExpectedParams, z as GetStaticPathsInvalidRouteParam, P as PageNumberParamNotFound, B as decryptString, C as createSlotValueFromString, r as renderTemplate, a as renderComponent, D as DEFAULT_404_COMPONENT, H as EnvUnsupportedGetSecret, J as NoMatchingStaticPathFound, K as PrerenderDynamicEndpointPathCollide, O as ReservedSlotName, Q as renderSlotToString, S as renderJSX, T as chunkToString, V as isRenderInstruction, W as LocalsReassigned, X as clientAddressSymbol$1, Y as PrerenderClientAddressNotAvailable, Z as ClientAddressNotAvailable, _ as StaticClientAddressNotAvailable, $ as RewriteWithBodyUsed, a0 as ASTRO_VERSION, a1 as AstroResponseHeadersReassigned, a2 as responseSentSymbol$1, a3 as renderPage, a4 as REWRITE_DIRECTIVE_HEADER_KEY, a5 as REWRITE_DIRECTIVE_HEADER_VALUE, a6 as renderEndpoint, a7 as LocalsNotAnObject, a8 as clientLocalsSymbol, a9 as REROUTABLE_STATUS_CODES } from './astro/server_BssNRSjG.mjs';
+import { R as ROUTE_TYPE_HEADER, o as REROUTE_DIRECTIVE_HEADER, A as AstroError, p as i18nNoLocaleFoundInPath, q as ResponseSentError, t as MiddlewareNoDataOrNextCalled, u as MiddlewareNotAResponse, G as GetStaticPathsRequired, v as InvalidGetStaticPathsReturn, w as InvalidGetStaticPathsEntry, x as GetStaticPathsExpectedParams, y as GetStaticPathsInvalidRouteParam, P as PageNumberParamNotFound, z as decryptString, B as createSlotValueFromString, r as renderTemplate, a as renderComponent, D as DEFAULT_404_COMPONENT, C as EnvUnsupportedGetSecret, H as NoMatchingStaticPathFound, J as PrerenderDynamicEndpointPathCollide, K as ReservedSlotName, O as renderSlotToString, Q as renderJSX, S as chunkToString, T as isRenderInstruction, V as LocalsReassigned, W as clientAddressSymbol$1, X as PrerenderClientAddressNotAvailable, Y as ClientAddressNotAvailable, Z as StaticClientAddressNotAvailable, _ as RewriteWithBodyUsed, $ as ASTRO_VERSION, a0 as AstroResponseHeadersReassigned, a1 as responseSentSymbol$1, a2 as renderPage, a3 as REWRITE_DIRECTIVE_HEADER_KEY, a4 as REWRITE_DIRECTIVE_HEADER_VALUE, a5 as renderEndpoint, a6 as LocalsNotAnObject, a7 as clientLocalsSymbol, a8 as REROUTABLE_STATUS_CODES } from './astro/server_SzM1YHsw.mjs';
 import { a as appendForwardSlash, j as joinPaths, t as trimSlashes, f as fileExtension, s as slash, p as prependForwardSlash, r as removeTrailingForwardSlash } from './path_CVKLlyuj.mjs';
 import { serialize, parse } from 'cookie';
 import { bold, red, yellow, dim, blue } from 'kleur/colors';
-import { g as getActionQueryString, d as deserializeActionResult, e as ensure404Route, a as default404Instance, D as DEFAULT_404_ROUTE, N as NOOP_MIDDLEWARE_FN } from './astro-designed-error-pages_CD9ln31V.mjs';
+import { g as getActionQueryString, d as deserializeActionResult, e as ensure404Route, a as default404Instance, D as DEFAULT_404_ROUTE, N as NOOP_MIDDLEWARE_FN } from './astro-designed-error-pages_Bap5635s.mjs';
 import 'es-module-lexer';
 import 'clsx';
-import { a as setGetEnv } from './setup_DZiRzElf.mjs';
+import { a as setGetEnv } from './setup_DLmRkRPo.mjs';
 import 'fast-glob';
 import nodePath from 'node:path';
 import buffer from 'node:buffer';
@@ -2675,7 +2675,7 @@ const ASTRO_MIDDLEWARE_SECRET_HEADER = 'x-astro-middleware-secret';
 apply();
 // Won't throw if the virtual module is not available because it's not supported in
 // the users's astro version or if astro:env is not enabled in the project
-await import('./setup_DZiRzElf.mjs').then(n => n.b)
+await import('./setup_DLmRkRPo.mjs').then(n => n.b)
     .then((mod) => mod.setGetEnv((key) => process.env[key]))
     .catch(() => { });
 const createExports = (manifest, { middlewareSecret, skewProtection }) => {
