@@ -15,6 +15,10 @@ export default defineConfig({
   image: {
     service: passthroughImageService(),
   },
+  vite: {
+    ssr: {
+      noExternal: 'cookie'
+  },
   env: {
     schema: {
       BLOG_API_ENDPOINT: envField.string({
