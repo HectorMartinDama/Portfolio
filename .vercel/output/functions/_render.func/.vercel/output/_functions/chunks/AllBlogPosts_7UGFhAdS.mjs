@@ -1,7 +1,7 @@
 import { c as createComponent, r as renderTemplate, m as maybeRenderHead, d as addAttribute, b as createAstro, a as renderComponent } from './astro/server_BssNRSjG.mjs';
 import 'kleur/colors';
 import 'clsx';
-import { U as URL_BLOG } from './data_DIwx83PH.mjs';
+import { U as URL_BLOG } from './data_BWEk-W4o.mjs';
 import { g as getEnv, c as createInvalidVariablesError, s as setOnSetGetEnv } from './setup_DZiRzElf.mjs';
 
 function getEnvFieldType(options) {

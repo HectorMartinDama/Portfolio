@@ -12,16 +12,17 @@ const { experience }= Astro.props;
 <div>
     <div class="flex justify-between flex-wrap">
         <p class="font-semibold">
-            <a href="https://www.3nitram.com/" target="_blank" class="hover:underline text-lg font-semibold">3nitram</a>
-            <span class="text-xs px-2 py-1 ml-2  rounded bg-[#F5F5F5] font-semibold">Remote</span>
+            <a href="https://www.3nitram.com/" target="_blank" class="hover:underline text-lg font-semibold">{experience.company}</a>
+            <span class="text-xs px-2 py-1 ml-2  rounded bg-[#F5F5F5] font-semibold">{experience.workMode}</span>
         </p>
-        <p class="text-xs text-secondary">November, 2023 - January, 2023</p>
+        <p class="text-xs text-secondary">{experience.date}</p>
     </div>
-    <p class="-tracking-wide">Junior Salesforce Developer</p>
+    <p class="-tracking-wide">{experience.title}</p>
     <ul class="list-disc pl-5 text-sm text-muted-foreground text-secondary">
-        <li>Developing custom components in Salesforce with JavaScript</li>
-        <li>Component testing with Jest and TDD</li>
-        <li>Work with Scrum methodology</li>
-        <li>Trainer of our product to customers</li>
+        {
+            experience.responsibilities.map(responsibility => (
+                <li>{responsibility}</li>
+            ))
+        }
     </ul>
 </div>

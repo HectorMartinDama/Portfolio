@@ -3,7 +3,7 @@ import { c as createComponent, r as renderTemplate, m as maybeRenderHead, d as a
 import 'kleur/colors';
 import 'clsx';
 import { $ as $$Layout } from '../chunks/Layout_DOv18Vrp.mjs';
-import { P as PROJECTS } from '../chunks/data_DIwx83PH.mjs';
+import { P as PROJECTS } from '../chunks/data_BWEk-W4o.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Article = createComponent(($$result, $$props, $$slots) => {

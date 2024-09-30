@@ -3,15 +3,15 @@ import { c as createComponent, r as renderTemplate, m as maybeRenderHead, b as c
 import 'kleur/colors';
 import 'clsx';
 import { $ as $$Layout } from '../chunks/Layout_DOv18Vrp.mjs';
-import { E as EXPERIENCE } from '../chunks/data_DIwx83PH.mjs';
+import { E as EXPERIENCE } from '../chunks/data_BWEk-W4o.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Astro = createAstro();
 const $$ExperienceCard = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$ExperienceCard;
-  Astro2.props;
-  return renderTemplate`${maybeRenderHead()}<div> <div class="flex justify-between flex-wrap"> <p class="font-semibold"> <a href="https://www.3nitram.com/" target="_blank" class="hover:underline text-lg font-semibold">3nitram</a> <span class="text-xs px-2 py-1 ml-2  rounded bg-[#F5F5F5] font-semibold">Remote</span> </p> <p class="text-xs text-secondary">November, 2023 - January, 2023</p> </div> <p class="-tracking-wide">Junior Salesforce Developer</p> <ul class="list-disc pl-5 text-sm text-muted-foreground text-secondary"> <li>Developing custom components in Salesforce with JavaScript</li> <li>Component testing with Jest and TDD</li> <li>Work with Scrum methodology</li> <li>Trainer of our product to customers</li> </ul> </div>`;
+  const { experience } = Astro2.props;
+  return renderTemplate`${maybeRenderHead()}<div> <div class="flex justify-between flex-wrap"> <p class="font-semibold"> <a href="https://www.3nitram.com/" target="_blank" class="hover:underline text-lg font-semibold">${experience.company}</a> <span class="text-xs px-2 py-1 ml-2  rounded bg-[#F5F5F5] font-semibold">${experience.workMode}</span> </p> <p class="text-xs text-secondary">${experience.date}</p> </div> <p class="-tracking-wide">${experience.title}</p> <ul class="list-disc pl-5 text-sm text-muted-foreground text-secondary"> ${experience.responsibilities.map((responsibility) => renderTemplate`<li>${responsibility}</li>`)} </ul> </div>`;
 }, "/Users/hectormartindama/Dev/portfolio-minimal/src/components/ExperienceCard.astro", void 0);
 
 const $$Index = createComponent(($$result, $$props, $$slots) => {

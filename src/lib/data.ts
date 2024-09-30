@@ -2,7 +2,20 @@ import type { Experience, Project } from "../types/global";
 
 export const URL_BLOG = "https://blog-hectormartindama.vercel.app/";
 
-export const EXPERIENCE: Experience[] = [{}];
+export const EXPERIENCE: Experience[] = [
+  {
+    title: "Junior Salesforce Developer",
+    date: "November, 2023 - January, 2023",
+    workMode: "Remote",
+    company: "3nitram",
+    responsibilities: [
+      "Developing custom components in Salesforce with JavaScript",
+      "Component testing with Jest and TDD",
+      "Work with Scrum methodology",
+      "Trainer of our product to customers",
+    ],
+  },
+];
 
 export const PROJECTS: Project[] = [
   {

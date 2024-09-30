@@ -1,5 +1,18 @@
 const URL_BLOG = "https://blog-hectormartindama.vercel.app/";
-const EXPERIENCE = [{}];
+const EXPERIENCE = [
+  {
+    title: "Junior Salesforce Developer",
+    date: "November, 2023 - January, 2023",
+    workMode: "Remote",
+    company: "3nitram",
+    responsibilities: [
+      "Developing custom components in Salesforce with JavaScript",
+      "Component testing with Jest and TDD",
+      "Work with Scrum methodology",
+      "Trainer of our product to customers"
+    ]
+  }
+];
 const PROJECTS = [
   {
     title: "AI Alt Text Generator",

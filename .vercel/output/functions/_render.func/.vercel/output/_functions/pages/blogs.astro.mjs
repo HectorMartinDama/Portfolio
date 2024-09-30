@@ -2,7 +2,7 @@
 import { c as createComponent, r as renderTemplate, a as renderComponent } from '../chunks/astro/server_BssNRSjG.mjs';
 import 'kleur/colors';
 import { $ as $$Layout } from '../chunks/Layout_DOv18Vrp.mjs';
-import $$AllBlogPosts from '../chunks/AllBlogPosts_CkGkE2Dr.mjs';
+import $$AllBlogPosts from '../chunks/AllBlogPosts_7UGFhAdS.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Index = createComponent(($$result, $$props, $$slots) => {

@@ -26,7 +26,15 @@ export type Entry = {
   };
 };
 
-export type Experience = {};
+export type Experience = {
+  date: string;
+  title: string;
+  workMode: WorkMode;
+  company: string;
+  responsibilities: string[];
+};
+
+export type WorkMode = "On Site" | "Remote";
 
 interface ResponseData {
   englishDocsEntries: Entry[];
