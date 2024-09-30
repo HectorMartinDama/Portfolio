@@ -1,16 +1,12 @@
 import { defineConfig, envField } from "astro/config";
 
 import tailwind from "@astrojs/tailwind";
-import vercel from "@astrojs/vercel/serverless";
+import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
   output: "server",
-  adapter: vercel({
-    webAnalytics: {
-      enabled: true,
-    },
-  }),
+  adapter: cloudflare(),
   integrations: [tailwind()],
   env: {
     schema: {
