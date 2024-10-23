@@ -14,6 +14,7 @@ const $$ExperienceCard = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<div> <div class="flex justify-between flex-wrap"> <p class="font-semibold"> <a href="https://www.3nitram.com/" target="_blank" class="hover:underline text-lg font-semibold">${experience.company}</a> <span class="text-xs px-2 py-1 ml-2  rounded bg-[#F5F5F5] font-semibold">${experience.workMode}</span> </p> <p class="text-xs text-secondary">${experience.date}</p> </div> <p class="-tracking-wide">${experience.title}</p> <ul class="list-disc pl-5 text-sm text-muted-foreground text-secondary"> ${experience.responsibilities.map((responsibility) => renderTemplate`<li>${responsibility}</li>`)} </ul> </div>`;
 }, "/Users/hectormartindama/Dev/portfolio-minimal/src/components/ExperienceCard.astro", void 0);
 
+const prerender = false;
 const $$Index = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "HectorDev - Experience" }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<div class="w-full max-w-xl space-y-10 mt-10"> ${EXPERIENCE.map((experience) => renderTemplate`${renderComponent($$result2, "ExperienceCard", $$ExperienceCard, { "experience": experience })}`)} </div> ` })}`;
 }, "/Users/hectormartindama/Dev/portfolio-minimal/src/pages/experience/index.astro", void 0);
@@ -25,6 +26,7 @@ const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
     __proto__: null,
     default: $$Index,
     file: $$file,
+    prerender,
     url: $$url
 }, Symbol.toStringTag, { value: 'Module' }));
 

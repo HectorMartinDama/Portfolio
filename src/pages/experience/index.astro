@@ -3,19 +3,11 @@ import ExperienceCard from "../../components/ExperienceCard.astro";
 import Layout from "../../layouts/Layout.astro";
 import { EXPERIENCE } from "../../lib/data";
 
-export const prerender = true
+export const prerender = false;
 ---
 
-
-
 <Layout title="HectorDev - Experience">
-    <div class="w-full max-w-xl space-y-10 mt-10">
-        {
-            EXPERIENCE.map(experience =>(
-                <ExperienceCard {experience}/>
-            ))
-        }
-    </div>
-
+  <div class="w-full max-w-xl space-y-10 mt-10">
+    {EXPERIENCE.map((experience) => <ExperienceCard {experience} />)}
+  </div>
 </Layout>
-
