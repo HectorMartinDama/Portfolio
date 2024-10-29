@@ -1,12 +1,12 @@
-import { defineConfig, envField, passthroughImageService } from "astro/config";
+import { defineConfig, passthroughImageService } from "astro/config";
 
 import tailwind from "@astrojs/tailwind";
-import vercel from "@astrojs/vercel/serverless";
+import vercelStatic from "@astrojs/vercel/static";
 
 // https://astro.build/config
 export default defineConfig({
-  output: "server",
-  adapter: vercel({
+  output: "static",
+  adapter: vercelStatic({
     webAnalytics: {
       enabled: true,
     },
@@ -14,13 +14,5 @@ export default defineConfig({
   integrations: [tailwind()],
   image: {
     service: passthroughImageService(),
-  },
-  env: {
-    schema: {
-      BLOG_API_ENDPOINT: envField.string({
-        context: "server",
-        access: "secret",
-      }),
-    },
   },
 });
